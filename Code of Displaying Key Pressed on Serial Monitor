@@ -1,0 +1,170 @@
+int button1 = 0;
+int button2 = 0;
+int button3 = 0;
+int buttonA = 0;
+int button4 = 0;
+int button5 = 0;
+int button6 = 0;
+int buttonB = 0;
+int button7 = 0;
+int button8 = 0;
+int button9 = 0;
+int buttonC = 0;
+int buttonAst = 0;
+int button0 = 0;
+int buttonHash = 0;
+int buttonD = 0;
+
+char ast = '*';
+char hash = '#';
+char Alfa = 'A';
+char Bravo = 'B';
+char Charlie = 'C';
+char Delta = 'D';
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);   //configure serial port to 9600 baud
+  
+  //set pins 2-5 as output
+  for (int i = 2; i < 6; i++){
+    pinMode(i, OUTPUT);
+  }
+  
+  //set pins 6-9 as input
+  for (int i = 6; i < 10; i++){
+    pinMode(i, INPUT);
+  }
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  
+  digitalWrite(2, HIGH);   //set pin 0 high
+  //check if input pins go high (button pressed)
+  button1 = digitalRead(6);
+  button4 = digitalRead(7);
+  button7 = digitalRead(8);
+  buttonAst = digitalRead(9);
+  digitalWrite(2, LOW);    //set pin 0 low
+  
+  if(button1 == 1){
+    delay(150);   //wait until switch settles
+    
+    Serial.println(1);
+  }
+
+  if(button4 == 1){
+    delay(150);   //wait until switch settles
+
+    Serial.println(4);
+  }
+
+  if(button7 == 1){
+    delay(150);   //wait until switch settles
+
+    Serial.println(7);
+  }
+
+  if(buttonAst == 1){
+    delay(150);   //wait until switch settles
+
+    Serial.println(ast);
+  }
+
+  digitalWrite(3, HIGH);   //set pin 0 high
+  //check if input pins go high (button pressed)
+  button2 = digitalRead(6);
+  button5 = digitalRead(7);
+  button8 = digitalRead(8);
+  button0 = digitalRead(9);
+  digitalWrite(3, LOW);    //set pin 0 low
+  
+  if(button2 == 1){
+    delay(150);   //wait until switch settles
+    
+    Serial.println(2);
+  }
+
+  if(button5 == 1){
+    delay(150);   //wait until switch settles
+
+    Serial.println(5);
+  }
+
+  if(button8 == 1){
+    delay(150);   //wait until switch settles
+
+    Serial.println(8);
+  }
+
+  if(button0 == 1){
+    delay(150);   //wait until switch settles
+
+    Serial.println(0);
+  }
+
+  digitalWrite(4, HIGH);   //set pin 0 high
+  //check if input pins go high (button pressed)
+  button3 = digitalRead(6);
+  button6 = digitalRead(7);
+  button9 = digitalRead(8);
+  buttonHash = digitalRead(9);
+  digitalWrite(4, LOW);    //set pin 0 low
+  
+  if(button3 == 1){
+    delay(150);   //wait until switch settles
+    
+    Serial.println(3);
+  }
+
+  if(button6 == 1){
+    delay(150);   //wait until switch settles
+
+    Serial.println(6);
+  }
+
+  if(button9 == 1){
+    delay(150);   //wait until switch settles
+
+    Serial.println(9);
+  }
+
+  if(buttonHash == 1){
+    delay(150);   //wait until switch settles
+
+    Serial.println(hash);
+  }
+
+   digitalWrite(5, HIGH);   //set pin 0 high
+  //check if input pins go high (button pressed)
+  buttonA = digitalRead(6);
+  buttonB = digitalRead(7);
+  buttonC = digitalRead(8);
+  buttonD = digitalRead(9);
+  digitalWrite(5, LOW);    //set pin 0 low
+  
+  if(buttonA == 1){
+    delay(150);   //wait until switch settles
+    
+    Serial.println(Alfa);
+  }
+
+  if(buttonB == 1){
+    delay(150);   //wait until switch settles
+
+    Serial.println(Bravo);
+  }
+
+  if(buttonC == 1){
+    delay(150);   //wait until switch settles
+
+    Serial.println(Charlie);
+  }
+
+  if(buttonD == 1){
+    delay(150);   //wait until switch settles
+
+    Serial.println(Delta);
+  }
+}
